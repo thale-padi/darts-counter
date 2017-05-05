@@ -16,7 +16,7 @@ var   gulp         = require('gulp'),
 // --------------------------------------------------------------------
 
 gulp.task('sass', function () {
-    return gulp.src('./public/scss/app.scss')
+    return gulp.src('./resources/assets/sass/app.scss')
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest('public/css'));
@@ -28,7 +28,7 @@ gulp.task('sass', function () {
 // --------------------------------------------------------------------
 
 gulp.task('mincss', ['sass'], function () {
-    return gulp.src('public/css/app.css')
+    return gulp.src('./public/css/app.css')
         .pipe(csso())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/css'));
@@ -39,13 +39,14 @@ gulp.task('mincss', ['sass'], function () {
 // take all js-files and generate a single js-file out of them
 // --------------------------------------------------------------------
 
-// snippet scripts src: public/js/scripts/*
-// generated single script src: public/js/logic.js
-// minified single script src: public/js/logic.min.js
+// snippet scripts src:resources/assets/js/scripts/*
+// generated single script src: resources/assets/js/logic.js
+// minified single script src: resources/assets/js/logic.min.js
 
 // order of files -> order in final js
 var jsFiles = [
-    'public/js/scripts/script.js'
+    'resources/assets/js/scripts/script.js',
+    'resources/assets/js/scripts/game.js'
 ];
 
 gulp.task('concat', function () {
@@ -72,8 +73,8 @@ gulp.task('minjs', ['concat'], function () {
 // --------------------------------------------------------------------
 
 gulp.task('watch', function () {
-  gulp.watch(['./public/scss/*.scss','./public/scss/**/*.scss'], ['sass', 'mincss']);
-  gulp.watch(['./public/js/scripts/*.js'], ['concat', 'minjs']);
+  gulp.watch(['./resources/assets/sass/*.scss','./resources/assets/sass/**/*.scss'], ['sass', 'mincss']);
+  gulp.watch(['./resources/assets/js/scripts/*.js'], ['concat', 'minjs']);
 });
 
 // --------------------------------------------------------------------
