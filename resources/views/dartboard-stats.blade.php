@@ -1,21 +1,12 @@
-<div class="dartboard-stats-wrapper">
-    <div class="current-player">
-        <div class="current-player-overview">
-            <!-- <img class="player-pic player-pic--large" src="/img/player-pic/player-1.jpg" alt="User"  /> -->
-            <h1 class="player-name player-name--large">Natalie Portman</h1>
-            <div class="player-rest player-rest--large">
-                501
-            </div>
-        </div>
-        <div>
-            t
-        </div>
+<div class="dartboard-stats__wrapper">
+    <div class="dartboard-stats__current-player">
+        @include('dartboard-stats/current-player-overview')
     </div>
 
-    <div class="all-players">
-        @include('player-small-overview')
-        @include('player-small-overview')
-        @include('player-small-overview')
-        @include('player-small-overview')
+    <div class="dartboard-stats__all-players">
+        @include('dartboard-stats/player-small-overview')
+        @include('dartboard-stats/player-small-overview')
+        @include('dartboard-stats/player-small-overview')
+        @include('dartboard-stats/player-small-overview')
     </div>
 </div>

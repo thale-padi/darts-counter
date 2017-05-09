@@ -18,7 +18,7 @@
                 @include('dartboard-stats')
             </div>
             <div class="dartboard-score">
-                <!-- @include('dartboard') -->
+                @include('dartboard')
             </div>
         </div>
     </body>

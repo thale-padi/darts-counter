@@ -5,12 +5,15 @@
     height: 100%;
     background-color: #fcfcfc; /*faakersee*/
 
+    /* ------------------------ */
+    /* Left Section for Stats and Players */
+    /* ------------------------ */
     .dartboard-stats {
         width: 35%;
         display: table-cell;
         position: relative;
 
-        .dartboard-stats-wrapper {
+        .dartboard-stats__wrapper {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -18,15 +21,88 @@
             flex-direction: column;
             align-items: flex-start;
 
-            .current-player {
+            .dartboard-stats__current-player {
                 height: 31%;
                 width: 96%;
                 margin: 2%;
+                padding: 0 10px;
                 margin-bottom: 1%;
                 background-color: #333;
+                position: relative;
+
+                .current-player__info {
+                    height: 30%;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .current-player__profile {
+                        padding: 11.5px 0 10px;
+
+                        img {
+                            height: 100%;
+                            max-width: 100%;
+                            border-radius: 50%;
+                            vertical-align: top;
+                        }
+
+                        .headline {
+                            display: inline-block;
+                            max-height: 100%;
+                            height: auto;
+                            overflow: hidden;
+                            position: relative;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            margin-left: 15px;
+                        }
+                    }
+
+                    .current-player__rest {
+                        padding: 11.5px 0 10px;
+                    }
+                }
+
+                .current-player__darts-thrown {
+                    height: 35%;
+                    position: relative;
+
+                    .current-player__current-darts,
+                    .current-player__last-thrown-darts,
+                    .current-player__checkout-darts {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        height: 50%;
+                        width: 100%;
+                        padding: 1.5px 0;
+                    }
+
+                    .current-player__last-thrown-darts,
+                    .current-player__checkout-darts {
+                        height: 25%;
+                    }
+
+                    .current-player__throw-box {
+                        flex-grow: 1;
+                        flex-basis: 0;
+                        background-color: #555;
+                        height: 100%;
+                        margin: 0 1.5px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        &--sum {
+                            margin-right: 0;
+                            background-color: #777;
+                        }
+                    }
+                }
             }
 
-            .all-players {
+            .dartboard-stats__all-players {
                 width: 96%;
                 height: 66%;
                 margin: 2%;
@@ -35,14 +111,14 @@
                 position: relative;
                 overflow-y: auto;
 
-                .player-small-overview {
+                .player-stats {
                     width: 100%;
                     height: 120px;
                     margin: 2% 0;
                     padding: 0 10px;
                     background-color: #444;
 
-                    .player-small-overview-player {
+                    .player-stats__player-name{
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -50,13 +126,13 @@
                         height: 45px;
                     }
 
-                    .player-small-overview-latest-throw {
+                    .player-stats__latest-throw-wrapper {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
                         height: 40px;
 
-                        .latest-throw-holder{
+                        .player-stats__latest-throw {
                             flex-grow: 1;
                             flex-basis: 0;
                             background-color: #555;
@@ -67,30 +143,14 @@
                                 margin-left: 0;
                             }
 
-                            &:last-child {
+                            &--sum {
                                 margin-right: 0;
                                 background-color: #777;
-                            }
-
-                            .latest-throw-score {
-                                color: #aaa;
-                                font-size: 20px;
-                                font-weight: 400;
-                                text-align: center;
-                                margin: 0;
-                                position: relative;
-                                top: 50%;
-                                transform: translateY(-50%);
-
-                                &--sum {
-                                    font-weight: 500;
-                                    color: #ddd;
-                                }
                             }
                         }
                     }
 
-                    .player-small-overview-stats {
+                    .player-stats__overview-stats {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -103,17 +163,21 @@
                         color: #aaa;
                         font-size: 12px;
                         font-weight: 500;
+                        line-height: 20px;
                     }
                 }
             }
         }
     }
 
+    /* ------------------------ */
+    /* Dartboard SVG */
+    /* ------------------------ */
     .dartboard-score {
         width: 65%;
         display: table-cell;
 
-        #dartboard {
+        #dartboard-score__dartboard {
             width: 100%;
             height: 100%;
 

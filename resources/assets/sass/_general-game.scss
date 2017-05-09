@@ -1,11 +1,60 @@
-.headline-player-name {
-    font-size: 20px;
+.headline {
     font-weight: 500;
     color: #F5F8FA;
+
+    &--name {
+        font-size: 20px;
+    }
+
+    &--rest {
+        font-size: 30px;
+    }
+
+    &--real-name {
+        font-size: 25px;
+        line-height: 27px;
+    }
+
+    &--dart-name {
+        font-size: 12px;
+        line-height: 17px;
+        font-weight: lighter;
+        font-style: italic;
+    }
+
+    &--current {
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 600;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
-.headline-player-rest {
-    font-size: 30px;
-    font-weight: 500;
-    color: #F5F8FA;
+.score {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--sum {
+        font-weight: 500;
+        color: #ddd;
+    }
+
+    &--small {
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: lighter;
+    }
+
+    &--big {
+        font-size: 25px;
+        font-weight: 500;
+    }
 }
